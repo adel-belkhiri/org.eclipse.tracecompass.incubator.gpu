@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.linuxtools.tmf.core.analysis">
+      <module
+            analysis_module="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core.GpuAnalysisModule"
+            automatic="true"
+            id="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core"
+            name="GPU Analysis">
+         <tracetype
+               applies="true"
+               class="org.eclipse.tracecompass.analysis.os.linux.core.trace.IKernelTrace">
+         </tracetype>
+      </module>
+   </extension>
+
+</plugin>

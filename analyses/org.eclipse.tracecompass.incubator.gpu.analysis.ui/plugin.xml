@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="org.eclipse.linuxtools.tmf.ui.views.category"
+            class="org.eclipse.tracecompass.incubator.internal.gpu.analysis.ui.views.GpuActivityView"
+            icon="icons/eview16/control_view.gif"
+            id="org.eclipse.tracecompass.incubator.internal.gpu.usage"
+            name="%GpuUsageView"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            category="org.eclipse.linuxtools.tmf.ui.views.category"
+            class="org.eclipse.tracecompass.incubator.internal.gpu.analysis.ui.views.GpuRequestsView"
+            icon="icons/eview16/control_view2.gif"
+            id="org.eclipse.tracecompass.incubator.internal.gpu.analysis.ui.views.GpuRequestsView"
+            name="%GpuControlFlowView"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            category="org.eclipse.linuxtools.tmf.ui.views.category"
+            class="org.eclipse.tracecompass.incubator.internal.gpu.analysis.ui.views.GpuPerProcessView"
+            icon="icons/eview16/control_view.gif"
+            id="org.eclipse.tracecompass.incubator.gpu.analysis.ui.view1"
+            name="GPU Per Process "
+            restorable="true">
+      </view>
+      <view
+            category="org.eclipse.linuxtools.tmf.ui.views.category"
+            class="org.eclipse.tracecompass.incubator.internal.gpu.analysis.ui.views.VirtGpuActivityView"
+            icon="icons/eview16/control_view.gif"
+            id="org.eclipse.tracecompass.incubator.gpu.analysis.ui.virtgpuusage"
+            name="Virtual GPU Usage"
+            restorable="true">
+      </view>
+   </extension>
+   
+   <extension
+         point="org.eclipse.linuxtools.tmf.core.analysis">
+      <output
+            class="org.eclipse.tracecompass.tmf.ui.analysis.TmfAnalysisViewOutput">
+         <analysisId
+               id="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core">
+         </analysisId>
+      </output>
+   </extension>
+   <extension
+         point="org.eclipse.tracecompass.tmf.core.dataprovider">
+      <dataProviderFactory
+            class="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core.GpuDataProviderFactory"
+            id="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core.GpuDataProvider">
+      </dataProviderFactory>
+      <dataProviderFactory
+            class="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core.GpuThreadDataProviderFactory"
+            id="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core.GpuThreadDataProvider">
+      </dataProviderFactory>
+      <dataProviderFactory
+            class="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core.VirtGpuDataProviderFactory"
+            id="org.eclipse.tracecompass.incubator.internal.gpu.analysis.core.VirtGpuDataProvider">
+      </dataProviderFactory>
+   </extension>
+
+</plugin>
